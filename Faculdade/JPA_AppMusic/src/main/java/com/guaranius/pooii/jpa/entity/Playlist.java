@@ -18,6 +18,10 @@ public class Playlist {
     )
     private List<Music> musics;
 
+    public Playlist() {
+
+    }
+
     public Long getIdPlaylist() {
         return idPlaylist;
     }

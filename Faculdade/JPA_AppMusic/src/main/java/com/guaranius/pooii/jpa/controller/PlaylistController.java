@@ -23,4 +23,10 @@ public class PlaylistController {
     public ResponseEntity<List<Playlist>> getAllPlaylists() {
         return ResponseEntity.ok(playlistService.findAllPlaylists());
     }
+
+    @PostMapping("/{playlistId}/addMusic/{musicId}")
+    public ResponseEntity<Playlist> addMusicToPlaylist(@PathVariable Long playlistId, @PathVariable Long musicId) {
+        Playlist updatedPlaylist = playlistService.addMusicToPlaylist(playlistId, musicId);
+        return ResponseEntity.ok(updatedPlaylist);
+    }
 }

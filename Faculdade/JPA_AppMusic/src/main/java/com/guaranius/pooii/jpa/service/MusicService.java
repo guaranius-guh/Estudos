@@ -23,16 +23,4 @@ public class MusicService {
     public List<Music> findByAlbumName(String albumName) {
         return musicRepository.findByAlbum_Name(albumName);
     }
-
-    public List<Music> findByArtistName(String artistName) {
-        return musicRepository.findByAlbum_Artist_Name(artistName);
-    }
-
-    public List<Music> findByGenreName(String genreName) {
-        return musicRepository.findByAlbum_Genre_Name(genreName);
-    }
-
-    public List<Music> findByPlaylistName(String playlistName) {
-        return musicRepository.findByPlaylists_Name(playlistName);
-    }
 }

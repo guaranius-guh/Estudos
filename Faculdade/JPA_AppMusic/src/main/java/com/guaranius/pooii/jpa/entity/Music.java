@@ -1,6 +1,7 @@
 package com.guaranius.pooii.jpa.entity;
 
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -11,11 +12,12 @@ public class Music {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "album_id")
+    @JoinColumn(name = "id_album")
     private Album album;
 
-    @ManyToMany
-    private List<Playlist> playlists;
+    public Music() {
+
+    }
 
     public Long getIdMusic() {
         return idMusic;
@@ -39,13 +41,5 @@ public class Music {
 
     public void setAlbum(Album album) {
         this.album = album;
-    }
-
-    public List<Playlist> getPlaylists() {
-        return playlists;
-    }
-
-    public void setPlaylists(List<Playlist> playlists) {
-        this.playlists = playlists;
     }
 }

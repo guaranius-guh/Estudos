@@ -10,7 +10,4 @@ import java.util.List;
 public interface MusicRepository extends JpaRepository<Music, Long> {
     List<Music> findByName(String name);
     List<Music> findByAlbum_Name(String albumName);
-    List<Music> findByAlbum_Artist_Name(String artistName);
-    List<Music> findByAlbum_Genre_Name(String genreName);
-    List<Music> findByPlaylists_Name(String playlistName);
 }

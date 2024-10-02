@@ -12,8 +12,12 @@ public class Genre {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "album_id")
+    @JoinColumn(name = "id_genre")
     private List<Album> albums;
+
+    public Genre() {
+
+    }
 
     public Long getIdGenre() {
         return idGenre;
@@ -29,13 +33,5 @@ public class Genre {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Album> getAlbums() {
-        return albums;
-    }
-
-    public void setAlbums(List<Album> albums) {
-        this.albums = albums;
     }
 }

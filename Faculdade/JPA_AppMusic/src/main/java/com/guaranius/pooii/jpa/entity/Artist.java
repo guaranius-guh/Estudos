@@ -13,8 +13,12 @@ public class Artist {
     private String nationality;
 
     @OneToMany
-    @JoinColumn(name = "artist_id")
+    @JoinColumn(name = "id_artist")
     private List<Album> albums;
+
+    public Artist() {
+
+    }
 
     public Long getIdArtist() {
         return idArtist;
