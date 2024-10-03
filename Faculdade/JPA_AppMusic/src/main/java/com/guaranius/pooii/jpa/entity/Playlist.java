@@ -1,13 +1,19 @@
 package com.guaranius.pooii.jpa.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class Playlist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPlaylist;
+    private Long id;
+
     private String name;
 
     @ManyToMany
@@ -20,29 +26,5 @@ public class Playlist {
 
     public Playlist() {
 
-    }
-
-    public Long getIdPlaylist() {
-        return idPlaylist;
-    }
-
-    public void setIdPlaylist(Long idPlaylist) {
-        this.idPlaylist = idPlaylist;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Music> getMusics() {
-        return musics;
-    }
-
-    public void setMusics(List<Music> musics) {
-        this.musics = musics;
     }
 }

@@ -1,37 +1,22 @@
 package com.guaranius.pooii.jpa.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idGenre;
-    private String name;
+    private Long id;
 
-    @OneToMany
-    @JoinColumn(name = "id_genre")
-    private List<Album> albums;
+    private String name;
 
     public Genre() {
 
-    }
-
-    public Long getIdGenre() {
-        return idGenre;
-    }
-
-    public void setIdGenre(Long idGenre) {
-        this.idGenre = idGenre;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
