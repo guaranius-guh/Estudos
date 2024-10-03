@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `db_music_streaming` /*!40100 DEFAULT CHARACTER S
 USE `db_music_streaming`;
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: db_music_streaming
+-- Host: localhost    Database: db_music_streaming
 -- ------------------------------------------------------
--- Server version	9.0.1
+-- Server version	8.0.39
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -110,7 +110,7 @@ CREATE TABLE `music` (
   PRIMARY KEY (`id`),
   KEY `FK1gpg5o9xo7gkxeietx17guu2g` (`album_id`),
   CONSTRAINT `FK1gpg5o9xo7gkxeietx17guu2g` FOREIGN KEY (`album_id`) REFERENCES `album` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,6 +119,7 @@ CREATE TABLE `music` (
 
 LOCK TABLES `music` WRITE;
 /*!40000 ALTER TABLE `music` DISABLE KEYS */;
+INSERT INTO `music` VALUES (1,'Desconfio',1),(2,'Sonhos e Planos',1),(3,'Vidas que se Encontram',1),(4,'Dias Atrás',1),(5,'Amigos Perdidos',1),(6,'Especial Como Você',1),(7,'Não Sei Viver Sem Ter Você',1),(8,'Atordoado',1),(9,'Garota da TV',1),(10,'Ontem',1),(11,'Coragem',1),(12,'Argumento',1),(13,'Peter',1),(14,'Mentiras Novas',1),(15,'Felicidade Instantânea',2),(16,'Um Minuto Para o Fim do Mundo',2),(17,'Apostas & Certezas',2),(18,'Irreversível',2),(19,'Não Vá Embora',2),(20,'A Cura',2),(21,'Recíproca',2),(22,'Pensamentos Negativos',2),(23,'Cidade em Chamas',2),(24,'Park, Park',2),(25,'Jovem, Alcoólatra, Suicida',2),(26,'Crise de Existência',2),(27,'Contagem Regressiva',2),(28,'Reflexões',2),(29,'Depois do Fim',2),(30,'Repetição',2),(31,'Álem de Mim',3),(32,'Consequência',3),(33,'Razões e Emoções',3),(34,'Um Pouco Mais',3),(35,'Ilusão',3),(36,'Apenas Um Olhar',3),(37,'Pela Última Vez',3),(38,'La Prision',3),(39,'Incompleta',3),(40,'Círculos',3),(41,'Tarde Demais',3),(42,'Uma Chance',3),(43,'Mentiras e Fracassos',3),(44,'Um Outro Caminho',3),(45,'Sem Hora Pra Voltar',4),(46,'Maré',4),(47,'Ligação',4),(48,'Hoje o Céu Abriu',4),(49,'Espero Um Sinal',4),(50,'Em Comum',4),(51,'Intro',4),(52,'Guerra Por Paz',4),(53,'Você Me Fez',4),(54,'Pedido',4),(55,'Estrada',4),(56,'Nada Mais é Como Era Antes',4),(57,'No Way Out',5),(58,'Outro Lugar',5),(59,'Quando o Sol se For',5),(60,'Ei Perae!!!',5),(61,'Olhos Certos',5),(62,'Nem Me Lembro Mais',5),(63,'O Bem e o Mal',5),(64,'Ladrão de Gravata',5),(65,'Mais Além',5),(66,'Que Diferença Faz',5),(67,'Outro Lugar - Versão Especial',5),(68,'O Amanhã',6),(69,'Nada Vai Mudar',6),(70,'O Dia que Não Terminou',6),(71,'Mercador das Almas',6),(72,'Só Por Hoje',6),(73,'Com Você',6),(74,'Silêncio',6),(75,'Meu Bem',6),(76,'Tênis Roque',6),(77,'Tô Aprendendo a Viver Sem Você',6),(78,'Send U Back',6),(79,'Speak to Me',7),(80,'Breathe (In the Air)',7),(81,'On the Run',7),(82,'Time',7),(83,'The Great Gig in the Sky',7),(84,'Money',7),(85,'Us and Them',7),(86,'Any Colour You Like',7),(87,'Brain Damage',7),(88,'Eclipse',7);
 /*!40000 ALTER TABLE `music` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,4 +182,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-03  9:32:24
+-- Dump completed on 2024-10-03 13:24:24
