@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `db_music_streaming` /*!40100 DEFAULT CHARACTER S
 USE `db_music_streaming`;
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: db_music_streaming
+-- Host: localhost    Database: db_music_streaming
 -- ------------------------------------------------------
--- Server version	9.0.1
+-- Server version	8.0.39
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -170,6 +170,7 @@ CREATE TABLE `playlist_music` (
 
 LOCK TABLES `playlist_music` WRITE;
 /*!40000 ALTER TABLE `playlist_music` DISABLE KEYS */;
+INSERT INTO `playlist_music` VALUES (1,4),(1,7),(1,16),(1,18),(1,33),(1,42),(1,46),(1,47),(1,58),(1,107),(1,116);
 /*!40000 ALTER TABLE `playlist_music` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -182,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-03 14:01:24
+-- Dump completed on 2024-10-03 19:14:47

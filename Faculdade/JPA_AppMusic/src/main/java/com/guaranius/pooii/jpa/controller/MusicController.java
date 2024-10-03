@@ -23,13 +23,13 @@ public class MusicController {
         return ResponseEntity.ok(musicService.addMusic(music));
     }
 
-    @GetMapping("/search/name")
-    public ResponseEntity<List<Music>> searchMusicByName(@RequestParam String name) {
+    @GetMapping("/search/name/{name}")
+    public ResponseEntity<List<Music>> searchMusicByName(@PathVariable String name) {
         return ResponseEntity.ok(musicService.findByName(name));
     }
 
-    @GetMapping("/search/album")
-    public ResponseEntity<List<Music>> searchMusicByAlbum(@RequestParam String albumName) {
+    @GetMapping("/search/album/{albumName}")
+    public ResponseEntity<List<Music>> searchMusicByAlbum(@PathVariable String albumName) {
         return ResponseEntity.ok(musicService.findByAlbumName(albumName));
     }
 }

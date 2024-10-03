@@ -32,8 +32,7 @@ public class PlaylistService {
         Music music = musicRepository.findById(musicId)
                 .orElseThrow(() -> new RuntimeException("Music not found"));
 
-        playlist.getMusics().add(music); // Adiciona a música à playlist
-        return playlistRepository.save(playlist); // Salva a playlist atualizada
+        playlist.getMusics().add(music);
+        return playlistRepository.save(playlist);
     }
 }
-
