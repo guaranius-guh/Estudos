@@ -35,4 +35,21 @@ public class PlaylistService {
         playlist.getMusics().add(music);
         return playlistRepository.save(playlist);
     }
+
+    public Playlist updatePlaylistName(Long playlistId, String newName) {
+        return playlistRepository.findById(playlistId)
+                .map(playlist -> {
+                    playlist.setName(newName);
+                    return playlistRepository.save(playlist);
+                })
+                .orElseThrow(() -> new RuntimeException("Playlist not found"));
+    }
+
+    public void deletePlaylist(Long playlistId) {
+        if (playlistRepository.existsById(playlistId)) {
+            playlistRepository.deleteById(playlistId);
+        } else {
+            throw new RuntimeException("Playlist not found");
+        }
+    }
 }

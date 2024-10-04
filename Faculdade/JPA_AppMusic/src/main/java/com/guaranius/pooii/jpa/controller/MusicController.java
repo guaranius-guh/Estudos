@@ -32,4 +32,15 @@ public class MusicController {
     public ResponseEntity<List<Music>> searchMusicByAlbum(@PathVariable String albumName) {
         return ResponseEntity.ok(musicService.findByAlbumName(albumName));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Music> updateMusic(@PathVariable Long id, @RequestBody Music updatedMusic) {
+        return ResponseEntity.ok(musicService.updateMusic(id, updatedMusic));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteMusic(@PathVariable Long id) {
+        musicService.deleteMusic(id);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -19,4 +19,21 @@ public class GenreService {
     public List<Genre> findAllGenres() {
         return genreRepository.findAll();
     }
+
+    public Genre updateGenre(Long id, Genre updatedGenre) {
+        return genreRepository.findById(id)
+                .map(genre -> {
+                    genre.setName(updatedGenre.getName());
+                    return genreRepository.save(genre);
+                })
+                .orElseThrow(() -> new RuntimeException("Genre not found with id " + id));
+    }
+
+    public void deleteGenre(Long id) {
+        if (genreRepository.existsById(id)) {
+            genreRepository.deleteById(id);
+        } else {
+            throw new RuntimeException("Genre not found with id " + id);
+        }
+    }
 }

@@ -23,4 +23,15 @@ public class ArtistController {
     public ResponseEntity<List<Artist>> getAllArtists() {
         return ResponseEntity.ok(artistService.findAllArtists());
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Artist> updateArtist(@PathVariable Long id, @RequestBody Artist updatedArtist) {
+        return ResponseEntity.ok(artistService.updateArtist(id, updatedArtist));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteArtist(@PathVariable Long id) {
+        artistService.deleteArtist(id);
+        return ResponseEntity.noContent().build();
+    }
 }

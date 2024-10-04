@@ -19,4 +19,23 @@ public class AlbumService {
     public List<Album> findAllAlbums() {
         return albumRepository.findAll();
     }
+
+    public Album updateAlbum(Long id, Album updatedAlbum) {
+        return albumRepository.findById(id)
+                .map(album -> {
+                    album.setName(updatedAlbum.getName());
+                    album.setArtist(updatedAlbum.getArtist());
+                    album.setGenre(updatedAlbum.getGenre());
+                    return albumRepository.save(album);
+                })
+                .orElseThrow(() -> new RuntimeException("Album not found with id " + id));
+    }
+
+    public void deleteAlbum(Long id) {
+        if (albumRepository.existsById(id)) {
+            albumRepository.deleteById(id);
+        } else {
+            throw new RuntimeException("Album not found with id " + id);
+        }
+    }
 }

@@ -29,4 +29,16 @@ public class PlaylistController {
         Playlist updatedPlaylist = playlistService.addMusicToPlaylist(playlistId, musicId);
         return ResponseEntity.ok(updatedPlaylist);
     }
+
+    @PutMapping("/{playlistId}/name")
+    public ResponseEntity<Playlist> updatePlaylistName(@PathVariable Long playlistId, @RequestBody String newName) {
+        Playlist updatedPlaylist = playlistService.updatePlaylistName(playlistId, newName);
+        return ResponseEntity.ok(updatedPlaylist);
+    }
+
+    @DeleteMapping("/{playlistId}")
+    public ResponseEntity<Void> deletePlaylist(@PathVariable Long playlistId) {
+        playlistService.deletePlaylist(playlistId);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -23,4 +23,15 @@ public class GenreController {
     public ResponseEntity<List<Genre>> getAllGenres() {
         return ResponseEntity.ok(genreService.findAllGenres());
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Genre> updateGenre(@PathVariable Long id, @RequestBody Genre updatedGenre) {
+        return ResponseEntity.ok(genreService.updateGenre(id, updatedGenre));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteGenre(@PathVariable Long id) {
+        genreService.deleteGenre(id);
+        return ResponseEntity.noContent().build();
+    }
 }
